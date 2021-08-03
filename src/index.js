@@ -11,40 +11,43 @@ function printQuestion() {
   } 
   question.querySelector(".qq span").innerText = data[0][itr].Question;
   var options = question.querySelector(".qo");
+  var inputRadio = options.getElementsByTagName("input");
+  var inputLabel = options.getElementsByTagName("label");
   for(var i = 0; i < 4; i++) {
-    options.getElementsByTagName("input")[i].name = itr + 1;
-    options.getElementsByTagName("input")[i].checked = false;
-    options.getElementsByTagName("label")[i].innerText = data[0][itr]["Option" + (i + 1)];
+    inputRadio[i].name = itr + 1;
+    inputRadio[i].checked = false;
+    inputLabel[i].innerText = data[0][itr]["Option" + (i + 1)];
   }
   question.style.display = "block";
   questionSpace.appendChild(question);
 }
 
 function checkAns(event) {
-  if(event.target.parentElement.parentElement.querySelector("input:checked") === null) {
-    //console.log(totalScore);
+  var checkedRadio = event.target.parentElement.parentElement.querySelector("input:checked");
+  if(checkedRadio === null) {
     alert("Please select an option");
   }
-  var question = event.target.parentElement.parentElement.querySelector("input:checked").name;
-  var selectedOption = event.target.parentElement.parentElement.querySelector("input:checked").value;
+  var question = checkedRadio.name;
+  var selectedOption = checkedRadio.value;
   
+  var allInputs = event.target.parentElement.parentElement.querySelectorAll("input");
   for(var i = 0; i < 4; i++) {
-    event.target.parentElement.parentElement.querySelectorAll("input")[i].disabled = true;
+    allInputs[i].disabled = true;
   }
-  
+  var responseBox = event.target.parentElement.querySelector(".response");
   if(data[1][question - 1] == selectedOption) {
     totalScore = totalScore + data[0][question - 1].Score;
-    event.target.parentElement.querySelector(".response").style.display = "inline-block";
-    event.target.parentElement.querySelector(".response").style.color = "#155841";
-    event.target.parentElement.querySelector(".response").style.backgroundColor= "#D4EDDA";
-    event.target.parentElement.querySelector(".response").style.border = "1px solid #28A745"
-    event.target.parentElement.querySelector(".response").innerText="Correct";
+    responseBox.style.display = "inline-block";
+    responseBox.style.color = "#155841";
+    responseBox.style.backgroundColor= "#D4EDDA";
+    responseBox.style.border = "1px solid #28A745"
+    responseBox.innerText="Correct";
   } else {
-    event.target.parentElement.querySelector(".response").style.display = "inline-block";
-    event.target.parentElement.querySelector(".response").style.color = "#721C24";
-    event.target.parentElement.querySelector(".response").style.backgroundColor= "#F8D7DA";
-    event.target.parentElement.querySelector(".response").style.border = "1px solid #c49da1"
-    event.target.parentElement.querySelector(".response").innerText="Incorrect";
+    responseBox.style.display = "inline-block";
+    responseBox.style.color = "#721C24";
+    responseBox.style.backgroundColor= "#F8D7DA";
+    responseBox.style.border = "1px solid #c49da1"
+    responseBox.innerText="Incorrect";
   }
   var nextbtn = event.target.parentElement.querySelector("button.next");
   event.target.style.display = "none";
@@ -54,8 +57,9 @@ function checkAns(event) {
 function nextQues(event) {
   itr++;
   printQuestion();
+  var allInputs = event.target.parentElement.parentElement.querySelectorAll("input");
   for(var i = 0; i < 4; i++) {
-    event.target.parentElement.parentElement.querySelectorAll("input")[i].disabled = false;
+    allInputs[i].disabled = false;
   }
   event.target.parentElement.querySelector(".response").style.display = "none";
   var submitbtn = event.target.parentElement.querySelector("button.check");
@@ -80,7 +84,6 @@ function restart() {
   while(answer_key.firstChild) {
     answer_key.removeChild(answer_key.firstChild);
   }
-  
   document.getElementById("answers").style.display = "none";
   document.getElementById("quiz-name").innerText = "Quiz";
   totalScore = 0;
@@ -88,7 +91,3 @@ function restart() {
   document.getElementById("questions").style.display = "block";
   printQuestion();
 }
-
-// const ans = data[1][0];
-// console.log(ans);
-// console.log((data[0][0][data[1][0]]))
