@@ -1,0 +1,48 @@
+body {
+  font-family: sans-serif;
+  background: rgba(var(--b3f, 250, 250, 250), 1);
+}
+#quiz-name {
+  display: block;
+  text-align: center;
+  margin: 30px auto;
+  font-size: xx-large;
+}
+#questions {
+  width: 100%;
+}
+.question-block {
+  width: 80vw;
+  margin: 20px auto;
+  display: none;
+}
+.qq {
+  padding-left: 20px;
+  background: olivedrab;
+  line-height: 60px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border: 1px solid black;
+}
+.qo {
+  padding: 15px 20px 20px 20px;
+  border: 1px solid black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.qo input {
+  vertical-align: -10px;
+}
+.qo input,
+.qo label {
+  height: 30px;
+}
+.check-answer {
+  margin-top: 20px;
+}
+#made-by {
+  display: block;
+  text-align: center;
+  width: 100%;
+  margin: 30px auto;
+}

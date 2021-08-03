@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Parcel Sandbox</title>
+    <meta charset="UTF-8" />
+    
+    <link rel="stylesheet" href="src/styles.css">
+  </head>
+
+  <body>
+    <div id="app">
+      <span id = "quiz-name">
+        Quiz
+      </span>
+    </div>
+
+    <div id="questions">
+      <div class="question-block">
+        <div class="qq">
+          <span>This is sample questions<span>
+        </div>
+        <div class="qo">
+          <input type = "radio" value = "Option1">
+          <label for = "Option1">This is first Option</label><br>
+          <input type = "radio" value = "Option2">
+          <label for = "Option2">This is first Option</label><br>
+          <input type = "radio" value = "Option3">
+          <label for = "Option3">This is first Option</label><br>
+          <input type = "radio" value = "Option4">
+          <label for = "Option4">This is first Option</label><br>
+          <div class="check-answer">
+            <button onClick="checkAns(event)" class = "check">Check</button>
+            <span class = "response"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <span id = "made-by">Made By <strong>Aryan Gupta</strong></span>
+    <script src="src/Questions.js"></script>
+    <script src="src/index.js"></script>
+  </body>
+</html>
