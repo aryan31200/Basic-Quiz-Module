@@ -1,34 +1,80 @@
 body {
-  font-family: sans-serif;
-  background: rgba(var(--b3f, 250, 250, 250), 1);
+  font-family: hind,sans-serif;
+  background: #f4f4f4;
+  padding: 0;
+  margin: 0;
 }
 #quiz-name {
+  background-color: rgb(52, 58, 64);
   display: block;
   text-align: center;
-  margin: 30px auto;
-  font-size: xx-large;
+  margin: 0 auto;
+  line-height: 80px;
+  font-size: 45px;
+  color: white;
+  font-weight: 500;
+}
+#answers {
+  display: none;
+}
+#answer-heading {
+  display: block;
+  font-weight: 600;
+  font-size: 30px;
+  width: 80vw;
+  margin: 40px auto 0px auto;
+}
+#answer-key {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  width: 80vw;
+  margin: 20px auto;
+}
+#answer-key ul {
+  margin-left: 20px;
+  padding: 20px;
+}
+#answer-key li {
+  padding-bottom: 5px;
+}
+#answer-key ul span {
+  display: inline-block;
+  background-color: #28A745;
+  color: white;
+  padding: 0 5px;
+  border-radius: 5px;
+} 
+.restarter {
+  font-family: hind,sans-serif;
+  border: none;
+  background-color: #17A2B8;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  margin-left: 10vw;
 }
 #questions {
   width: 100%;
 }
 .question-block {
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
   width: 80vw;
-  margin: 20px auto;
+  margin: 40px auto;
   display: none;
 }
 .qq {
   padding-left: 20px;
-  background: olivedrab;
-  line-height: 60px;
-  border-top-right-radius: 10px;
-  border-top-left-radius: 10px;
-  border: 1px solid black;
+  padding-top: 20px;
+  line-height: 40px;
+  box-shadow: 2px;
+  font-size: 25px;
+  font-weight: 600;
 }
 .qo {
-  padding: 15px 20px 20px 20px;
-  border: 1px solid black;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+  padding: 5px 20px 20px 20px;
 }
 .qo input {
   vertical-align: -10px;
@@ -37,12 +83,42 @@ body {
 .qo label {
   height: 30px;
 }
-.check-answer {
-  margin-top: 20px;
+
+.response {
+  padding: 10px 20px;
+  border-radius: 3px;
+  display: none;
+  font-weight: 600;
+  font-size: 20px;
+  margin: 20px auto 5px auto;
+}
+button.check {
+  font-family: hind,sans-serif;
+  border: none;
+  background-color: #FFC107;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+button.next {
+  font-family: hind,sans-serif;
+  border: none;
+  background-color: #28A745;
+  color: white;
+  display: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+button:hover {
+  cursor: pointer;
+}
+footer {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
 }
 #made-by {
   display: block;
-  text-align: center;
   width: 100%;
   margin: 30px auto;
 }

@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Parcel Sandbox</title>
+    <title>Quiz</title>
     <meta charset="UTF-8" />
-    
+    <link href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet">
     <link rel="stylesheet" href="src/styles.css">
   </head>
 
@@ -12,6 +12,15 @@
       <span id = "quiz-name">
         Quiz
       </span>
+    </div>
+
+    <div id="answers">
+      <div id="answer-block">
+        <span id="answer-heading">Answer Key</span>
+        <div id="answer-key">
+        </div>
+        <button class="restarter" onClick="restart()">Restart</button>
+      </div>
     </div>
 
     <div id="questions">
@@ -29,13 +38,18 @@
           <input type = "radio" value = "Option4">
           <label for = "Option4">This is first Option</label><br>
           <div class="check-answer">
-            <button onClick="checkAns(event)" class = "check">Check</button>
-            <span class = "response"></span>
+            <div class = "response"></div><br>  
+            <button onClick="checkAns(event)" class = "check">Submit</button>
+            <button onClick="nextQues(event)" class = "next">Next</button>
           </div>
         </div>
       </div>
     </div>
-    <span id = "made-by">Made By <strong>Aryan Gupta</strong></span>
+
+    <footer>
+      <span id = "made-by">Made By <strong>Aryan Gupta</strong></span>
+    </footer>
+    
     <script src="src/Questions.js"></script>
     <script src="src/index.js"></script>
   </body>
